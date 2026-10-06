@@ -1,0 +1,34 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "ghostfun",
+  "main": ".open-next/worker.js",
+  "compatibility_date": "2026-09-01",
+  // nodejs_compat        -> lets Next.js server code + the `pg` Postgres driver run
+  // global_fetch_strictly_public -> correct fetch() behaviour from inside the Worker
+  "compatibility_flags": ["nodejs_compat", "global_fetch_strictly_public"],
+  "assets": {
+    "directory": ".open-next/assets",
+    "binding": "ASSETS"
+  },
+  "services": [
+    {
+      "binding": "WORKER_SELF_REFERENCE",
+      // must match "name" above
+      "service": "ghostfun"
+    }
+  ],
+  "observability": {
+    "enabled": true
+  }
+
+  // ---------------------------------------------------------------------
+  // OPTIONAL — Hyperdrive (faster Postgres from the edge).
+  // 1) npx wrangler hyperdrive create ghostfun-db --connection-string="postgresql://..."
+  // 2) paste the returned id below and uncomment
+  // 3) see DEPLOY.md for the two extra lines needed in src/db/index.ts
+  //
+  // "hyperdrive": [
+  //   { "binding": "HYPERDRIVE", "id": "<your-hyperdrive-id>" }
+  // ]
+  // ---------------------------------------------------------------------
+}

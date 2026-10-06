@@ -1,0 +1,48 @@
+# dependencies
+/node_modules
+/.pnp
+.pnp.*
+
+# next.js
+/.next/
+/out/
+next-env.d.ts
+
+# production
+/build
+/dist
+
+# cloudflare / opennext
+/.open-next/
+/.wrangler/
+cloudflare-env.d.ts
+.dev.vars
+.dev.vars.*
+!.dev.vars.example
+
+# environment — NEVER commit real secrets
+.env
+.env.*
+!.env.example
+
+# testing
+/coverage
+
+# misc
+.DS_Store
+*.pem
+/public/debug
+
+# logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# typescript
+*.tsbuildinfo
+
+# editors
+.idea
+.vscode/*
+!.vscode/extensions.json

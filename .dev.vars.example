@@ -1,0 +1,4 @@
+# Copy to .dev.vars — used by `wrangler dev` / `npm run preview` only.
+# .dev.vars is gitignored; never commit the real one.
+NEXTJS_ENV=development
+DATABASE_URL=postgresql://postgres:postgres@127.0.0.1:5432/app_db
