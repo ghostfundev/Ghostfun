@@ -19,15 +19,7 @@
   ],
   "observability": {
     "enabled": true
-  },
-  // ghst.fun zone is already on Cloudflare. custom_domain creates the DNS
-  // record and SSL cert on deploy. The zone currently holds proxied A records
-  // for both names pointing at a dead origin — delete them first or wrangler
-  // will stop on the conflict.
-  "routes": [
-    { "pattern": "ghst.fun", "custom_domain": true },
-    { "pattern": "www.ghst.fun", "custom_domain": true }
-  ]
+  }
 
   // ---------------------------------------------------------------------
   // OPTIONAL — Hyperdrive (faster Postgres from the edge).
